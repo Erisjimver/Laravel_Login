@@ -12,5 +12,23 @@
 */
 
 Route::get('/', function () {
+
+	$user=Auth::user();
+	if($user->esAdmin()){
+		echo "Eres usuario administrador";
+	}
+	else{
+		echo "Eres estudiante";
+	}
+
+
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
