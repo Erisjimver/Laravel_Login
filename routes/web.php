@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
 
+/*
 	$user=Auth::user();
 	if($user->esAdmin()){
 		echo "Eres usuario administrador";
@@ -21,6 +22,7 @@ Route::get('/', function () {
 		echo "Eres estudiante";
 	}
 
+*/
 
     return view('welcome');
 });
@@ -32,3 +34,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+/*
+Route::get('/admin/user/roles', ['middlerware'=>'role', function(){
+	return "MIddleware role";
+}]);
+*/
+Route::get('/admin', 'AdministradorController@index');

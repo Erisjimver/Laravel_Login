@@ -22,9 +22,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        /*
         $user=Auth::user();
         return view('home',compact('user'));
+        */
+        //$request->sessions()->put(['Israel'=>'Administrador']);
+        //sessions(['Maria'=>'Estudiante']);
+        //$reques->session()->forget('Maria');
+        return $request->sessions()->all();
     }
 }
